@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Weather Dashboard — live current conditions and a 7-day forecast from Open-Meteo.">
+  <title>Weather Dashboard — Kumar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="back-link" href="../index.html">← Back to portfolio</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Weather Dashboard</h1>
+      <p class="hero-tagline">Live current conditions and a 7-day forecast, powered by Open-Meteo.</p>
+    </section>
+
+    <section class="search-section">
+      <form id="search-form" autocomplete="off">
+        <label for="city-input" class="visually-hidden">Search for a city</label>
+        <input id="city-input" type="text" placeholder="Search for a city…" aria-label="Search for a city">
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+      <ul id="suggestions" class="suggestions" hidden></ul>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section id="current" class="current-card" hidden>
+      <div class="current-top">
+        <div>
+          <h2 id="location-name">—</h2>
+          <p id="location-meta" class="muted">—</p>
+        </div>
+        <div class="current-icon" id="current-icon" aria-hidden="true">—</div>
+      </div>
+      <p class="current-temp"><span id="current-temp">—</span><span class="temp-unit">°F</span></p>
+      <p id="current-condition" class="current-condition">—</p>
+      <div class="current-grid">
+        <div class="stat"><span class="label">Feels like</span><span id="feels-like">—</span></div>
+        <div class="stat"><span class="label">Humidity</span><span id="humidity">—</span></div>
+        <div class="stat"><span class="label">Wind</span><span id="wind">—</span></div>
+        <div class="stat"><span class="label">Precipitation</span><span id="precip">—</span></div>
+      </div>
+    </section>
+
+    <section id="forecast-section" hidden>
+      <h2>7-day forecast</h2>
+      <div id="forecast" class="forecast-grid"></div>
+    </section>
+
+    <p class="attribution">Data: <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo</a> — free weather APIs, no key required.</p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

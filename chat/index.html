@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Realtime Chat — a chat app by Kumar. Messages sync live between tabs.">
+  <title>Realtime Chat — Kumar</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="back-link" href="../index.html">← Back to portfolio</a>
+    <span class="header-title">Realtime Chat</span>
+  </header>
+
+  <main class="chat-wrap">
+    <p class="sync-note">Open this page in another tab to see messages sync live.</p>
+
+    <section class="name-bar" aria-label="Display name">
+      <label for="nameInput">Display name</label>
+      <input id="nameInput" type="text" maxlength="24" placeholder="Pick a display name" autocomplete="off">
+      <button id="saveNameBtn" type="button">Save</button>
+      <span class="name-status" id="nameStatus"></span>
+    </section>
+
+    <nav class="rooms" aria-label="Chat rooms">
+      <button type="button" data-room="General" class="room-btn active">General</button>
+      <button type="button" data-room="Tech" class="room-btn">Tech</button>
+      <button type="button" data-room="Random" class="room-btn">Random</button>
+    </nav>
+
+    <h1 class="room-label" id="roomLabel">#General</h1>
+
+    <section class="messages" id="messages" aria-live="polite" aria-label="Messages"></section>
+
+    <form class="composer" id="composer">
+      <input id="messageInput" type="text" maxlength="500" placeholder="Message #General" autocomplete="off" aria-label="Message">
+      <button type="submit">Send</button>
+    </form>
+    <p class="hint" id="hint" role="status"></p>
+  </main>
+
+  <footer class="site-footer">
+    <p>Messages are stored only in your browser (localStorage) and sync between tabs on this device. Nothing is sent to a server.</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TaskFlow — a simple task manager. Add tasks, set due dates, organize by list, and pick up where you left off.">
+  <title>TaskFlow — Simple Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="back-link" href="../index.html">← Back to portfolio</a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>TaskFlow</h1>
+      <p class="tagline">A simple task manager. Your tasks are saved in this browser, so they&rsquo;ll still be here when you come back.</p>
+    </section>
+
+    <form id="add-form" class="add-form">
+      <input id="task-input" type="text" placeholder="Add a new task…" autocomplete="off" maxlength="200" required>
+      <input id="due-input" type="date" aria-label="Due date">
+      <select id="list-select" aria-label="List">
+        <option value="Personal">Personal</option>
+        <option value="Work">Work</option>
+      </select>
+      <button type="submit" class="btn btn-primary">Add task</button>
+    </form>
+
+    <div class="filters">
+      <div class="filter-group" id="status-filters" role="group" aria-label="Filter by status">
+        <button type="button" data-filter="all" class="filter-btn active">All</button>
+        <button type="button" data-filter="active" class="filter-btn">Active</button>
+        <button type="button" data-filter="completed" class="filter-btn">Completed</button>
+      </div>
+      <div class="filter-group" id="list-filters" role="group" aria-label="Filter by list">
+        <button type="button" data-list="all" class="filter-btn active">All lists</button>
+        <button type="button" data-list="Personal" class="filter-btn">Personal</button>
+        <button type="button" data-list="Work" class="filter-btn">Work</button>
+      </div>
+    </div>
+
+    <p id="stats" class="stats" aria-live="polite"></p>
+
+    <ul id="task-list" class="task-list"></ul>
+
+    <div id="empty-state" class="empty-state">
+      <p id="empty-title" class="empty-title">No tasks yet</p>
+      <p id="empty-text">Add your first task above to get started.</p>
+    </div>
+
+    <button id="clear-completed" type="button" class="btn btn-secondary">Clear completed</button>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
